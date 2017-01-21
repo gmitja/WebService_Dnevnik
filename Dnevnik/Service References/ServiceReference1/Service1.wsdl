@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:53421/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:53421/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_Welcom_InputMessage">
+    <wsdl:part name="parameters" element="tns:Welcom" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Welcom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WelcomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VrniVseArtikle_InputMessage">
+    <wsdl:part name="parameters" element="tns:VrniVseArtikle" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VrniVseArtikle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VrniVseArtikleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VrniDnevnik_InputMessage">
+    <wsdl:part name="parameters" element="tns:VrniDnevnik" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VrniDnevnik_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VrniDnevnikResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VstaviRokUporabe_InputMessage">
+    <wsdl:part name="parameters" element="tns:VstaviRokUporabe" />
+  </wsdl:message>
+  <wsdl:message name="IService1_VstaviRokUporabe_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VstaviRokUporabeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="Welcom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Welcom" message="tns:IService1_Welcom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/WelcomResponse" message="tns:IService1_Welcom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VrniVseArtikle">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VrniVseArtikle" message="tns:IService1_VrniVseArtikle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VrniVseArtikleResponse" message="tns:IService1_VrniVseArtikle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VrniDnevnik">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VrniDnevnik" message="tns:IService1_VrniDnevnik_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VrniDnevnikResponse" message="tns:IService1_VrniDnevnik_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VstaviRokUporabe">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/VstaviRokUporabe" message="tns:IService1_VstaviRokUporabe_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/VstaviRokUporabeResponse" message="tns:IService1_VstaviRokUporabe_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Welcom">
+      <soap:operation soapAction="http://tempuri.org/IService1/Welcom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VrniVseArtikle">
+      <soap:operation soapAction="http://tempuri.org/IService1/VrniVseArtikle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VrniDnevnik">
+      <soap:operation soapAction="http://tempuri.org/IService1/VrniDnevnik" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VstaviRokUporabe">
+      <soap:operation soapAction="http://tempuri.org/IService1/VstaviRokUporabe" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://localhost:53421/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
